@@ -1,0 +1,46 @@
+{% load leaflet_tags %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    {% leaflet_js %}
+    {% leaflet_css %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <title>REST Client Frontend</title>
+</head>
+
+<body>
+    <div id="map">
+        <h1>REST Client Frontend</h1>
+        <div id="data-container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Area</th>
+                        <th>Latitude</th>
+                        <th>Longitude</th>
+                        <th>Geometry</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for county in counties %}
+                    <tr>
+                        <td>{{ county.name_en }}</td>
+                        <td>{{ county.area }}</td>
+                        <td>{{ county.latitude }}</td>
+                        <td>{{ county.longitude }}</td>
+                        <td>{{ county.geom }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+
+    <!-- Leaflet CSS from CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
+    <!-- Leaflet Geocoder CSS from CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+
+    <style>
+        #map {
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <!-- Leaflet JS from CDN -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <!-- Leaflet Geocoder JS from CDN -->
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+
+    <script>
+        // Initialize the map
+        var map = L.map('map').setView([51.505, -0.09], 13); // Set to an initial location (London)
+
+        // Add OpenStreetMap tile layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Add the Geocoder search control
+        var geocoder = L.Control.Geocoder.nominatim();
+        var control = L.Control.geocoder({
+            position: 'topright',
+            geocoder: geocoder,
+            placeholder: 'Search for hotel address...',
+            collapsed: false
+        }).addTo(map);
+
+        // Handle search result
+        control.on('markgeocode', function(e) {
+            var latlng = e.geocode.center;
+            L.marker(latlng).addTo(map)
+                .bindPopup("Hotel: " + e.geocode.name)
+                .openPopup();
+            map.setView(latlng, 13);
+        });
+    </script>
+</body>
+</html>
