@@ -1,31 +1,37 @@
-<!-- frontend/templates/restaurants.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurants</title>
+    <title>Restaurant List</title>
+
     <style>
         body {
             font-family: Arial, sans-serif;
             padding: 20px;
         }
+
         h1 {
             text-align: center;
         }
+
         .restaurant-list {
             margin-top: 30px;
         }
+
         .restaurant {
             background-color: #f9f9f9;
             border: 1px solid #ddd;
             padding: 10px;
             margin-bottom: 10px;
             border-radius: 5px;
+            cursor: pointer;
         }
+
         .restaurant h2 {
             margin: 0;
         }
+
         .restaurant p {
             margin: 5px 0;
         }
@@ -34,7 +40,8 @@
 <body>
 
     <h1>Restaurant List</h1>
-    
+
+    <!-- Restaurant List -->
     <div class="restaurant-list" id="restaurant-list">
         <!-- Restaurants will be displayed here -->
     </div>
@@ -48,17 +55,19 @@
 
                 if (data.restaurants.length > 0) {
                     data.restaurants.forEach(restaurant => {
+                        const { id, name, address, city } = restaurant;
+
+                        // Create restaurant div and append it to the list
                         const restaurantDiv = document.createElement('div');
                         restaurantDiv.classList.add('restaurant');
 
-                        // Add restaurant information to the div
+                        // Remove map link and just show the restaurant name, address, and city
                         restaurantDiv.innerHTML = `
-                            <h2>${restaurant.name}</h2>
-                            <p><strong>Address:</strong> ${restaurant.address}</p>
-                            <p><strong>City:</strong> ${restaurant.city}</p>
+                            <h2>${name}</h2>
+                            <p><strong>Address:</strong> ${address}</p>
+                            <p><strong>City:</strong> ${city}</p>
                         `;
 
-                        // Append restaurant div to the list container
                         restaurantListContainer.appendChild(restaurantDiv);
                     });
                 } else {
