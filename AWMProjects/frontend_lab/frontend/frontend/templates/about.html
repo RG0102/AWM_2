@@ -1,0 +1,51 @@
+<!-- frontend/templates/about.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+</head>
+<body>
+
+    <!-- Include the navbar -->
+    {% include 'navbar.html' %}
+    
+    <div class="about-container">
+        <h1>About Us</h1>
+        <p>Welcome to our Restaurant App! We are dedicated to providing the best restaurant recommendations and experiences. Our platform offers a wide range of restaurants with detailed information, so you can find the perfect dining spot for any occasion.</p>
+
+        <h2>Our Mission</h2>
+        <p>Our mission is to connect food lovers with the best restaurants in town. We aim to provide accurate information and helpful reviews so you can make informed decisions on where to eat.</p>
+
+        <h2>Our Team</h2>
+        <p>Our team consists of passionate foodies, web developers, and designers working together to bring you the best restaurant discovery platform. We're constantly improving and adding new features to enhance your experience.</p>
+    </div>
+
+    <style>
+        .about-container {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .about-container h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .about-container h2 {
+            color: #444;
+            font-size: 2em;
+            margin-top: 20px;
+        }
+        .about-container p {
+            color: #555;
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+    </style>
+
+</body>
+</html>
