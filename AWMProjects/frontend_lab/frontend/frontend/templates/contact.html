@@ -1,0 +1,103 @@
+<!-- frontend/templates/contact.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+</head>
+<body>
+
+    <!-- Include the navbar -->
+    {% include 'navbar.html' %}
+    
+    <div class="contact-container">
+        <h1>Contact Us</h1>
+        <p>Have any questions or suggestions? Feel free to get in touch with us!</p>
+        
+        <h2>Contact Information</h2>
+        <p>Email: <a href="mailto:support@restaurantapp.com">support@restaurantapp.com</a></p>
+        <p>Phone: +1 234 567 890</p>
+
+        <h2>Follow Us</h2>
+        <p>Stay connected and follow us on social media for the latest updates!</p>
+        <p>
+            <a href="https://facebook.com" target="_blank">Facebook</a> | 
+            <a href="https://twitter.com" target="_blank">Twitter</a> | 
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+        </p>
+
+        <h2>Get in Touch</h2>
+        <form action="" method="post">
+            <div>
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <style>
+        .contact-container {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .contact-container h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .contact-container h2 {
+            color: #444;
+            font-size: 2em;
+            margin-top: 20px;
+        }
+        .contact-container p {
+            color: #555;
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .contact-container form {
+            margin-top: 30px;
+            text-align: left;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .contact-container label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .contact-container input, .contact-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .contact-container button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .contact-container button:hover {
+            background-color: #555;
+        }
+    </style>
+
+</body>
+</html>
