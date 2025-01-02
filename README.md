@@ -95,8 +95,4 @@ This project is open-source and available under the [MIT License](LICENSE).
 - [Django](https://www.djangoproject.com/) - The web framework used for the backend.
 - [Leaflet](https://leafletjs.com/) - A JavaScript library for interactive maps (removed from this version).
 - [Bootstrap](https://getbootstrap.com/) - For front-end components (if applicable).
-- Any other acknowledgements or credits you'd like to include.
-
----
-
-Feel free to modify the README to suit your project specifics. It’s a good idea to keep the **installation instructions** up-to-date and list any dependencies or third-party tools you used in the **Acknowledgements** section.
+  
