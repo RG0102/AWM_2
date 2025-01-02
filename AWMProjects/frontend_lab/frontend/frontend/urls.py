@@ -1,4 +1,4 @@
-"""
+="""
 URL configuration for frontend project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -17,11 +17,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic.base import RedirectView
-from .views import restaurant_list
+from .views import contact_view
+from .import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-v1/', include('gis_rest_app.urls')),
-    path('restaurant/', restaurant_list, name='restaurant_list'),
+    path('home/', views.home_view, name='home'),
+    path('about/', views.about_view, name='about'),
+    path('restaurant/', views.restaurant_list, name='restaurant_list'),
+    path('contact/', contact_view, name='contact'),
+    path('signup/', views.signup_view, name='signup'),
+    path('login/', views.login_view, name='login'),
+    path('restaurant/map/<int:id>/', views.map_view, name='restaurant-map'),
     path('', RedirectView.as_view(url='/api-v1/restaurants', permanent=True)),  
 ]
